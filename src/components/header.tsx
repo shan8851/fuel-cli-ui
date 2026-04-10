@@ -27,9 +27,10 @@ export const Header = () => {
       <nav className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
         <a
           href="#"
-          className="font-mono text-accent font-semibold text-sm tracking-tight"
+          className="flex items-center gap-2 text-accent font-bold text-lg tracking-tight"
         >
-          fuel-cli
+          <span className="text-xl">⛽</span>
+          <span className="font-heading text-2xl">fuel-cli</span>
         </a>
 
         <div className="flex items-center gap-6">

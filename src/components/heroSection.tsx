@@ -53,14 +53,6 @@ export const HeroSection = () => {
     <section className="min-h-screen flex items-center relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,var(--color-accent-glow)_0%,transparent_70%)] opacity-60" />
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "radial-gradient(var(--color-text-dim) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">

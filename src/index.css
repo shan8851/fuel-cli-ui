@@ -21,7 +21,7 @@
   --color-terminal-comment: #665c4e;
 
   --font-heading: "Instrument Serif", serif;
-  --font-body: "Satoshi", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
 
@@ -30,6 +30,11 @@ html {
   color: var(--color-text);
   font-family: var(--font-body);
   scroll-behavior: smooth;
+  background-image:
+    linear-gradient(rgba(42, 36, 24, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 36, 24, 0.4) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-attachment: fixed;
 }
 
 body {

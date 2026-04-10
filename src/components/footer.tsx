@@ -4,7 +4,10 @@ export const Footer = () => (
   <footer className="border-t border-border py-12 px-6">
     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
       <div>
-        <span className="font-mono text-accent font-semibold text-sm">fuel-cli</span>
+        <span className="flex items-center gap-1.5 text-accent font-bold">
+          <span>⛽</span>
+          <span className="font-heading text-lg">fuel-cli</span>
+        </span>
         <p className="text-text-dim text-sm mt-2">
           UK fuel prices in your terminal.
         </p>
