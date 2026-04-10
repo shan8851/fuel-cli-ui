@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      background: #0f0c08;
+      font-family: 'IBM Plex Sans', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(42, 36, 24, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(42, 36, 24, 0.35) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    .glow {
+      position: absolute;
+      top: 50%;
+      right: 15%;
+      width: 600px;
+      height: 500px;
+      transform: translateY(-50%);
+      background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 60px 80px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .logo-emoji {
+      font-size: 28px;
+    }
+
+    .logo-text {
+      font-family: 'Instrument Serif', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: #f59e0b;
+    }
+
+    h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 72px;
+      font-weight: 400;
+      color: #f0ebe3;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    h1 span { color: #f59e0b; }
+
+    .subtitle {
+      font-size: 22px;
+      color: #9c9282;
+      line-height: 1.5;
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+
+    .install {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: #0a0806;
+      border: 1px solid #2a2418;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+    }
+
+    .install .prompt { color: #f59e0b; }
+    .install .cmd { color: #d4cdc2; }
+
+    .terminal {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 400px;
+      background: #0a0806;
+      border: 1px solid #2a2418;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(245, 158, 11, 0.1);
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      background: #141110;
+      border-bottom: 1px solid #2a2418;
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red { background: #ff5f57; }
+    .dot-yellow { background: #febc2e; }
+    .dot-green { background: #28c840; }
+
+    .terminal-content {
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .terminal-content .prompt-char { color: #f59e0b; }
+    .terminal-content .prompt-line { color: #f0ebe3; }
+    .terminal-content .output { color: #d4cdc2; }
+    .terminal-content .muted { color: #665c4e; }
+    .terminal-content .price { color: #f59e0b; }
+    .terminal-content .fresh { color: #28c840; }
+    .terminal-content .aging { color: #febc2e; }
+
+    .url {
+      position: absolute;
+      bottom: 40px;
+      left: 80px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      color: #665c4e;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow"></div>
+
+  <div class="content">
+    <div class="logo">
+      <span class="logo-emoji">⛽</span>
+      <span class="logo-text">fuel-cli</span>
+    </div>
+    <h1>UK fuel prices<br><span>in your terminal</span></h1>
+    <div class="subtitle">Find the cheapest petrol and diesel nearby. Ranked by price, distance, or freshness.</div>
+    <div class="install">
+      <span class="prompt">$</span>
+      <span class="cmd">npm i -g @shan8851/fuel-cli</span>
+    </div>
+  </div>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="dot dot-red"></div>
+      <div class="dot dot-yellow"></div>
+      <div class="dot dot-green"></div>
+    </div>
+    <div class="terminal-content">
+      <div><span class="prompt-char">$</span> <span class="prompt-line">fuel near "SE1 9SG" --fuel E10</span></div>
+      <br>
+      <div class="output">Nearest E10 stations within 5mi of SE1 9SG</div>
+      <br>
+      <div><span class="output">Tesco Waterloo Express</span> <span class="price">134.9p</span> <span class="fresh">● fresh</span></div>
+      <div class="muted">&nbsp;&nbsp;&nbsp;0.8mi</div>
+      <br>
+      <div><span class="output">Sainsbury's Waterloo</span> <span class="price">141.9p</span> <span class="fresh">● fresh</span></div>
+      <div class="muted">&nbsp;&nbsp;&nbsp;1.1mi</div>
+      <br>
+      <div><span class="output">Shell Waterloo</span> <span class="price">143.9p</span> <span class="aging">◐ aging</span></div>
+      <div class="muted">&nbsp;&nbsp;&nbsp;1.0mi</div>
+    </div>
+  </div>
+
+  <div class="url">fuel-cli.xyz</div>
+</body>
+</html>
