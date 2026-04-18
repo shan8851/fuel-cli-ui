@@ -1,5 +1,4 @@
 import { motion } from "motion/react"
-import { Github } from "lucide-react"
 import { SectionHeading } from "@/components/sectionHeading.tsx"
 import { CodeBlock } from "@/components/codeBlock.tsx"
 
@@ -12,7 +11,7 @@ export const SkillSection = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <SectionHeading title="Agent Skill" />
+        <SectionHeading title="🦞 Agent Skill" />
       </motion.div>
 
       <motion.p
@@ -22,8 +21,8 @@ export const SkillSection = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        Install the skill so your agent knows every command. Grab it from the
-        skills collection for any agent framework.
+        Install the skill so your agent knows every command. Works with OpenClaw,
+        or grab it from the skills collection for any agent framework.
       </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -33,6 +32,39 @@ export const SkillSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.15 }}
+        >
+          <h3 className="text-text font-mono font-semibold text-sm mb-3">
+            ClawHub
+          </h3>
+          <CodeBlock code="clawhub install fuel-cli" />
+          <p className="text-text-dim text-xs mt-3">
+            For{" "}
+            <a
+              href="https://github.com/openclaw/openclaw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-muted hover:text-accent underline"
+            >
+              OpenClaw
+            </a>{" "}
+            users
+          </p>
+          <a
+            href="https://clawhub.ai/shan8851/fuel-cli"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-3 text-xs text-text-muted hover:text-accent transition-colors"
+          >
+            View on ClawHub →
+          </a>
+        </motion.div>
+
+        <motion.div
+          className="rounded-lg border border-border bg-surface p-6"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.25 }}
         >
           <h3 className="text-text font-mono font-semibold text-sm mb-3">
             Skills Collection
@@ -46,30 +78,6 @@ export const SkillSection = () => (
             className="inline-block mt-3 text-xs text-text-muted hover:text-accent transition-colors"
           >
             Browse all skills →
-          </a>
-        </motion.div>
-
-        <motion.div
-          className="rounded-lg border border-border bg-surface p-6"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.25 }}
-        >
-          <h3 className="text-text font-mono font-semibold text-sm mb-3">
-            View Source
-          </h3>
-          <p className="text-text-muted text-sm leading-relaxed mb-4">
-            The skill is a plain markdown file — drop it into any agent that supports skills, or use it as a reference for building your own.
-          </p>
-          <a
-            href="https://github.com/shan8851/agent-skills/tree/main/skills/fuel-cli"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent transition-colors"
-          >
-            <Github size={14} />
-            View skill source →
           </a>
         </motion.div>
       </div>

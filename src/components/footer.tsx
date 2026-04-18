@@ -32,6 +32,14 @@ export const Footer = () => (
           <Package size={14} />
           npm
         </a>
+        <a
+          href="https://clawhub.ai/shan8851/fuel-cli"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-text-muted hover:text-accent transition-colors"
+        >
+          🦞 ClawHub
+        </a>
         <span className="text-text-dim">MIT License</span>
       </div>
 
