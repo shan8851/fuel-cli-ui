@@ -1,6 +1,7 @@
 {
   "name": "fuel-cli-ui",
   "private": true,
+  "packageManager": "pnpm@10.23.0",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
